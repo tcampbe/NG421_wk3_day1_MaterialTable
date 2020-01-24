@@ -6,13 +6,13 @@ import { members } from "../club-members";
   providedIn: "root"
 })
 export class MemberSService {
-  Members: IMember[];
+  members: IMember[] = [];
 
   constructor() {
-    this.Members = members;
+    this.members = members;
   }
 
   getmembers(): IMember[] {
-    return this.Members;
+    return this.members;
   }
 }
