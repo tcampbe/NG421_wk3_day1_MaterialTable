@@ -4,17 +4,29 @@
   placeholder="Filter"
 />
 
-<table mat-table [datasource]="dataSource" matSort class="mat-elevation-z8">
-  <ng-container matColumnDef="name">
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Member Number</th>
 
-    <th mat-cell *matCellDef="let character">{{character.id}}</th>
+    <th mat-cell *matCellDef="let member">{{ member.id }}</th>
   </ng-container>
 
   <ng-container matColumnDef="name">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
 
-    <th mat-cell *matCellDef="let character">{{character.name}}</th>
+    <th mat-cell *matCellDef="let member">{{ member.name }}</th>
+  </ng-container>
+
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Age</th>
+
+    <th mat-cell *matCellDef="let member">{{ member.age }}</th>
+  </ng-container>
+
+  <ng-container matColumnDef="currentMember">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Active</th>
+
+    <th mat-cell *matCellDef="let member">{{ member.currentMember }}</th>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

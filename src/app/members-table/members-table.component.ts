@@ -11,18 +11,16 @@ import { MatSort } from "@angular/material/sort";
   styleUrls: ["./members-table.component.css"]
 })
 export class MembersTableComponent implements OnInit {
-  displayedColumns: string[] = ["No.", "Name", "Age", "Current"];
+  displayedColumns: string[] = ["id", "name", "age", "currentMember"];
   dataSource: MatTableDataSource<IMember>;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   constructor(private memberSService: MemberSService) {}
 
   ngOnInit() {
-    this.dataSource = 
-    new MatTableDataSource(this.memberSService.members);
+    this.dataSource = new MatTableDataSource(this.memberSService.members);
     this.dataSource.sort = this.sort;
-
   }
-applyFilter(filterValue: string){
-  this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
-}
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
+  }
 }
