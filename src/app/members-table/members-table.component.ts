@@ -18,7 +18,7 @@ export class MembersTableComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource = 
-    new MatTableDataSource(this.memberSService.CHARACTER_DATA);
+    new MatTableDataSource(this.memberSService.members);
     this.dataSource.sort = this.sort;
 
   }

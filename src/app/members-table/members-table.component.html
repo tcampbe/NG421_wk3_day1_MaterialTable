@@ -1,1 +1,22 @@
-<p>members-table works!</p>
+<input
+  matInput
+  (keyup)="applyFilter($event.target.value)"
+  placeholder="Filter"
+/>
+
+<table mat-table [datasource]="dataSource" matSort class="mat-elevation-z8">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Member Number</th>
+
+    <th mat-cell *matCellDef="let character">{{character.id}}</th>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+
+    <th mat-cell *matCellDef="let character">{{character.name}}</th>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
